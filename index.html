@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;    
+    }
+    
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        background-color: #d9d9d9;
+    }
+
+    #mirror {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border: 1px solid green;
+        background-color: #c1c1cc;
+    }
+    
+    .select-wrapper {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .rule {
+        position: absolute;
+        display: flex;
+    }
+    
+    .rule > div {
+        background-color: #666;
+    }
+    
+    .rule.horizontal {
+        justify-content: space-between;
+        width: 100%;
+        height: 20px;
+    }
+    
+    .rule.horizontal .horizontal-separator {
+        width: 1px;
+        height: 3px;
+    }
+    
+    .rule.horizontal .horizontal-separator:first-child,
+    .rule.horizontal .horizontal-separator:nth-child(10n + 1){
+        height: 5px;
+    }
+    
+    .rule.vertical {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20px;
+        height: 100%;        
+    }
+    
+    .rule.vertical .vertical-separator {
+        width: 3px;
+        height: 1px;
+    }
+    
+    .rule.vertical .vertical-separator:first-child,
+    .rule.vertical .vertical-separator:nth-child(10n + 1){
+        width: 5px;
+    }
+    
+    .rule.top {
+        align-items: flex-end;
+        bottom: 100%;
+        left: 0;
+        padding-bottom: 3px;
+    }
+    
+    .rule.right {
+        align-items: flex-start;
+        top: 0;
+        left: 100%;
+        padding-left: 3px;
+    }
+    
+    .rule.bottom {
+        align-items: flex-start;
+        top: 100%;
+        left: 0;
+        padding-top: 3px;
+    }
+    
+    .rule.left {
+        align-items: flex-end;
+        top: 0;
+        right: 100%;
+        padding-right: 3px;
+    }
+    
+    .rule-numbers {
+        position: absolute;
+        display: flex;
+    }
+    
+    .rule-numbers .rule-number {
+        width: 12px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+    }
+    
+    .rule-numbers.horizontal {
+        justify-content: space-between;
+        width: calc(100% + 10px);
+    }
+    
+    .rule-numbers.vertical {
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% + 10px);        
+    }    
+    
+    .rule-numbers.top {
+        align-items: flex-end;
+        bottom: 100%;
+        left: -5px;
+        padding-bottom: 12px;
+    }
+    
+    .rule-numbers.right {
+        align-items: flex-start;
+        top: -5px;
+        left: 100%;
+        padding-left: 12px;
+    }
+    
+    .rule-numbers.bottom {
+        align-items: flex-start;
+        top: 100%;
+        left: -5px;
+        padding-top: 12px;
+    }
+    
+    .rule-numbers.left {
+        align-items: flex-end;
+        top: -5px;
+        right: 100%;
+        padding-right: 12px;
+    }
+
+</style>
+
+<body>
+
+    <div id="container">
+        <div id="mirror">
+            <div class="rule horizontal top" id="horizontal-top-lines"></div>
+            <div class="rule vertical right" id="vertical-right-lines"></div>
+            <div class="rule horizontal bottom" id="horizontal-bottom-lines"></div>
+            <div class="rule vertical left" id="vertical-left-lines"></div>
+            
+            <div class="rule-numbers horizontal top"></div>
+            <div class="rule-numbers vertical right"></div>
+            <div class="rule-numbers horizontal bottom"></div>
+            <div class="rule-numbers vertical left"></div>
+        </div>
+    </div>
+
+    <div class="select-wrapper">
+       <span>width</span>
+        <select name="width" id="width">
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+        </select>
+    </div>
+    <div class="select-wrapper">
+       <span>height</span>
+        <select name="height" id="height">
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+        </select>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
