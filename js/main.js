@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
             rule = document.getElementsByClassName('rule'),
             ruleNumber = document.getElementsByClassName('rule-numbers');
 
-        Array.from(rule).forEach(function(item, i){
+        for (var i = 0; i < rule.length; i++) {
             rule[i].innerHTML = '';            
-        })
+        }
         
-        Array.from(ruleNumber).forEach(function(item, i){
+        for (var i = 0; i < ruleNumber.length; i++) {
             ruleNumber[i].innerHTML = '';            
         })
 
