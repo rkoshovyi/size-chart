@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", function() {
             rule = document.getElementsByClassName('rule'),
             ruleNumber = document.getElementsByClassName('rule-numbers');
 
-        for (var i = 0; i < rule.length; i++) {
-            rule[i].innerHTML = '';
-        }
-        for (var i = 0; i < ruleNumber.length; i++) {
-            ruleNumber[i].innerHTML = '';
-        }
+        Array.from(rule).forEach(function(item, i){
+            rule[i].innerHTML = '';            
+        })
+        
+        Array.from(ruleNumber).forEach(function(item, i){
+            ruleNumber[i].innerHTML = '';            
+        })
 
         var ruleHorizontal = document.getElementsByClassName('rule horizontal');
         for (var i = 0; i < horizontalLinesCount; i++) {
