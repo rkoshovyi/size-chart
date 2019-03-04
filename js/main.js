@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         for (var i = 0; i < ruleNumber.length; i++) {
             ruleNumber[i].innerHTML = '';            
-        })
+        }
 
         var ruleHorizontal = document.getElementsByClassName('rule horizontal');
         for (var i = 0; i < horizontalLinesCount; i++) {
